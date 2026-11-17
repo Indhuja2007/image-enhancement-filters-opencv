@@ -71,14 +71,14 @@ Display all filtered images using a grid layout for comparison.
 
 ## Program and Output
 
-Import Required Libraries:
+## Import Required Libraries:
 ```
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-Read the Input Image:
+## Read the Input Image:
 ```
 img = cv2.imread("paris.jpeg")
 
@@ -88,7 +88,7 @@ else:
     print("Image loaded successfully")
 ```
 
-Convert BGR to RGB and Display Original Image:
+## Convert BGR to RGB and Display Original Image:
 ```
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
@@ -99,7 +99,7 @@ plt.show()
 ```
 <img width="343" height="517" alt="image" src="https://github.com/user-attachments/assets/fefa1841-025e-4968-84dd-8ae116c5c9a8" />
 
-Apply Averaging Filter:
+## Apply Averaging Filter:
 ```
 avg = cv2.blur(img, (25, 25))
 
@@ -121,7 +121,7 @@ plt.show()
 ```
 <img width="870" height="522" alt="image" src="https://github.com/user-attachments/assets/8a90c690-8a8c-4db2-9c3d-4f88e1992594" />
 
-Apply Weighted Averaging Filter:
+## Apply Weighted Averaging Filter:
 ```
 kernel = np.array([[1, 2, 1],
                    [2, 4, 2],
@@ -147,7 +147,7 @@ plt.show()
 ```
 <img width="866" height="523" alt="image" src="https://github.com/user-attachments/assets/ee186261-da86-4474-906f-36d1f536b1ae" />
 
-Gaussian Filter:
+## Gaussian Filter:
 ```
 gaussian = cv2.GaussianBlur(img, (25, 25), 0)
 
@@ -169,7 +169,7 @@ plt.show()
 ```
 <img width="865" height="531" alt="image" src="https://github.com/user-attachments/assets/806e0dd0-0958-4ad3-b1f2-6264e292afa3" />
 
-Median Filter:
+## Median Filter:
 ```
 # Apply Median Filter
 median = cv2.medianBlur(img, 5)
@@ -194,7 +194,7 @@ plt.show()
 ```
 <img width="977" height="527" alt="image" src="https://github.com/user-attachments/assets/0625059c-9686-4964-9aa8-6da1beff88ba" />
 
-Laplacian Sharpening Using Kernel:
+## Laplacian Sharpening Using Kernel:
 ```
 # Convert image to grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -230,7 +230,7 @@ plt.show()
 ```
 <img width="862" height="518" alt="image" src="https://github.com/user-attachments/assets/59af6ecf-9bf1-4933-ac0b-7db34d81e450" />
 
-Laplacian Operator:
+## Laplacian Operator:
 ```
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -252,9 +252,9 @@ plt.axis("off")
 
 plt.show()
 ```
-<img width="862" height="530" alt="image" src="https://github.com/user-attachments/assets/f03ebc6b-219e-49fa-bb74-93779f3d826c" />
+## <img width="862" height="530" alt="image" src="https://github.com/user-attachments/assets/f03ebc6b-219e-49fa-bb74-93779f3d826c" />
 
-Display All Outputs Together:
+## Display All Outputs Together:
 ```
 # Store all images
 images = [img_rgb, avg_rgb, weighted_rgb, gaussian_rgb,
